@@ -1,0 +1,42 @@
+{{>layout/header}}
+
+<h1>Web Service</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/posts/save" role="button" class="btn btn-primary">Write</a>
+            {{#sUserName}}
+                Logged in as: <span id="user">{{sUserName}}</span>
+                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+            {{/sUserName}}
+            {{^sUserName}}
+                <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+            {{/sUserName}}
+        </div>
+    </div>
+    <br>
+<!-- 목록 출력 영역 -->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>Post no.</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Last modified date</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#posts}}
+            <tr>
+                <td>{{id}}</td>
+                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                <td>{{author}}</td>
+                <td>{{modifiedDate}}</td>
+            </tr>
+        {{/posts}}
+        </tbody>
+    </table>
+</div>
+
+{{>layout/footer}}
