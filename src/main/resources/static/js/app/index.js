@@ -19,6 +19,16 @@ var main = {
             author: $('#author').val(),
             content: $('#content').val()
         };
+        if($('#title').val().length < 1) {
+            alert("제목을 입력하세요");
+            $('#title').focus();
+            return false;
+        }
+        if($('#author').val().length < 1) {
+            alert("작성자를 입력하세요");
+            $('#author').focus();
+            return false;
+        }
 
         $.ajax({
             type: 'POST',
