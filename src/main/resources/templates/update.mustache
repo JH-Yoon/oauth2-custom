@@ -22,9 +22,14 @@
                 <textarea class="form-control" id="content">{{post.content}}</textarea>
             </div>
         </form>
-        <a href="/" role="button" class="btn btn-secondary">Cancel</a>
-        <button type="button" class="btn btn-primary" id="btn-update">Update</button>
-        <button type="button" class="btn btn-danger" id="btn-delete">Delete</button>
+        {{#author}}
+            <a href="/" role="button" class="btn btn-secondary">Cancel</a>
+            <button type="button" class="btn btn-primary" id="btn-update">Update</button>
+            <button type="button" class="btn btn-danger" id="btn-delete">Delete</button>
+        {{/author}}
+        {{^author}}
+            <a href="/" role="button" class="btn btn-secondary">Back</a>
+        {{/author}}
     </div>
 </div>
 
