@@ -12,6 +12,12 @@
             {{^sUserName}}
                 <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
                 <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+                <br>
+                <form method="post" action="/login2">
+                    <input type="text" name="username" id="username" value="" />
+                    <input type="password" name="password" id="password" value="" />
+                    <button type="submit">Login</button>
+                </form>
             {{/sUserName}}
         </div>
     </div>
